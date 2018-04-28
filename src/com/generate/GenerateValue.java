@@ -37,9 +37,13 @@ public class GenerateValue {
 		resolutions.add(new Resolution(1080, 1776));
 		resolutions.add(new Resolution(1080, 1800));
 		resolutions.add(new Resolution(1080, 1812));
-		resolutions.add(new Resolution(1800, 1920));
-		resolutions.add(new Resolution(2560, 1440));
-		resolutions.add(new Resolution(2560, 1600));
+		resolutions.add(new Resolution(1080, 1920));
+		resolutions.add(new Resolution(1080, 2070));
+//		resolutions.add(new Resolution(2560, 1440));
+//		resolutions.add(new Resolution(2560, 1600));
+		resolutions.add(new Resolution(1440, 2416));
+		resolutions.add(new Resolution(1440, 2560));
+		resolutions.add(new Resolution(1600, 2560));
 	}
 	
 	private void generate() throws IOException {
@@ -121,6 +125,30 @@ public class GenerateValue {
 		public float getY_pixel() {
 			return y_pixel;
 		}
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	private List<SwResolution> swResolutions;
+	private void generateSwResolution() {
+		swResolutions = new ArrayList<>();
+	}
+	
+	private class SwResolution{
+		
+		private final String file_name;
+		private final int x_pixel;
+		public SwResolution(String file_name, int x_pixel) {
+			super();
+			this.file_name = file_name;
+			this.x_pixel = x_pixel;
+		}
+		public String getFile_name() {
+			return file_name;
+		}
+		public int getX_pixel() {
+			return x_pixel;
+		}
+		
 	}
 	
 }
